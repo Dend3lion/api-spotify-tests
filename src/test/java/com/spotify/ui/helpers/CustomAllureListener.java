@@ -1,4 +1,4 @@
-package com.spotify.api.helpers;
+package com.spotify.ui.helpers;
 
 import io.qameta.allure.restassured.AllureRestAssured;
 

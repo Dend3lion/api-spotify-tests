@@ -1,2 +1,4 @@
-package com.spotify.ui.api;public class AuthorizationApi {
+package com.spotify.ui.api;
+
+public class AuthorizationApi {
 }
