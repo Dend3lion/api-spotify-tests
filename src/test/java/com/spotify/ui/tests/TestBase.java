@@ -18,31 +18,32 @@ import java.util.Map;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
-    private static final WebConfig webConfig = ConfigFactory.create(WebConfig.class, System.getProperties());;
-    private static final ApiConfig apiConfig = ConfigFactory.create(ApiConfig.class, System.getProperties());;
+//    private static final WebConfig webConfig = ConfigFactory.create(WebConfig.class, System.getProperties());
+    ;
+    private static final ApiConfig apiConfig = ConfigFactory.create(ApiConfig.class, System.getProperties());
+    ;
 
     @BeforeAll
     public static void setUp() {
         RestAssured.baseURI = apiConfig.getBaseUrl();
-        RestAssured.basePath = apiConfig.getBasePath();
 
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.baseUrl = webConfig.getBaseUrl();
-        Configuration.browser = webConfig.getBrowser();
-        Configuration.browserSize = webConfig.getBrowserSize();
-        Configuration.browserVersion = webConfig.getBrowserVersion();
-
-        if (webConfig.isRemote()) {
-            Configuration.remote = webConfig.getRemoteHost();
-
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("selenoid:options", Map.of(
-                    "enableVNC", true,
-                    "enableVideo", true
-
-            ));
-            Configuration.browserCapabilities = capabilities;
-        }
+//        Configuration.pageLoadStrategy = "eager";
+//        Configuration.baseUrl = webConfig.getBaseUrl();
+//        Configuration.browser = webConfig.getBrowser();
+//        Configuration.browserSize = webConfig.getBrowserSize();
+//        Configuration.browserVersion = webConfig.getBrowserVersion();
+//
+//        if (webConfig.isRemote()) {
+//            Configuration.remote = webConfig.getRemoteHost();
+//
+//            DesiredCapabilities capabilities = new DesiredCapabilities();
+//            capabilities.setCapability("selenoid:options", Map.of(
+//                    "enableVNC", true,
+//                    "enableVideo", true
+//
+//            ));
+//            Configuration.browserCapabilities = capabilities;
+//        }
     }
 
     @BeforeEach
@@ -52,13 +53,13 @@ public class TestBase {
 
     @AfterEach
     void addAttachments() {
-        Attach.screenshotAs("Last screenshot");
-        Attach.pageSource();
-        Attach.browserConsoleLogs();
-        if (webConfig.isRemote()) {
-            Attach.addVideo();
-        }
-
-        closeWebDriver();
+//        Attach.screenshotAs("Last screenshot");
+//        Attach.pageSource();
+//        Attach.browserConsoleLogs();
+//        if (webConfig.isRemote()) {
+//            Attach.addVideo();
+//        }
+//
+//        closeWebDriver();
     }
 }
