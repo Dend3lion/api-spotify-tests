@@ -6,10 +6,7 @@ import org.aeonbits.owner.ConfigFactory;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
-import static com.spotify.ui.specs.TestSpecs.requestSpecification;
-import static com.spotify.ui.specs.TestSpecs.responseSpecStatusCodeIs200;
 import static io.restassured.RestAssured.given;
-
 
 public class AuthorizationApi {
     private static final ApiConfig apiConfig = ConfigFactory.create(ApiConfig.class, System.getProperties());
@@ -23,16 +20,14 @@ public class AuthorizationApi {
     public static String getAccessToken() {
         String encodedCredentials = encode(CLIENT_ID, CLIENT_SECRET);
 
-        return given(requestSpecification)
+        return given()
                 .contentType("application/x-www-form-urlencoded")
                 .formParam("grant_type", "client_credentials")
                 .header("Authorization", "Basic " + encodedCredentials)
                 .when()
                 .post(apiConfig.getAuthUrl() + "/api/token")
                 .then()
-                .spec(responseSpecStatusCodeIs200)
                 .extract()
                 .path("access_token");
-
     }
 }

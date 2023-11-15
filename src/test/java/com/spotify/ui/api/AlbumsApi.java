@@ -1,35 +1,55 @@
 package com.spotify.ui.api;
 
 import com.spotify.ui.models.Album;
-import com.spotify.ui.tests.TestBase;
-import io.restassured.RestAssured;
+import com.spotify.ui.models.Error;
+import io.qameta.allure.Step;
 
 import static com.spotify.ui.specs.TestSpecs.requestSpecification;
-import static com.spotify.ui.specs.TestSpecs.responseSpecStatusCodeIs200;
+import static com.spotify.ui.specs.TestSpecs.responseSpecification;
 import static io.restassured.RestAssured.given;
 
 public class AlbumsApi {
-    public static Album getAlbum(String id, String accessToken) {
+    @Step("Send GET /albums/{id}")
+    public static Album getValidAlbum(String id) {
         return given(requestSpecification)
-                .auth()
-                .oauth2(accessToken)
                 .when()
                 .get("v1/albums/{id}", id)
                 .then()
-                .spec(responseSpecStatusCodeIs200)
+                .spec(responseSpecification)
                 .extract()
                 .as(Album.class);
     }
 
-    public static Album getAlbum(String id, String market, String accessToken) {
+    @Step("Send GET /albums/{id}")
+    public static Error getInvalidAlbum(String id) {
         return given(requestSpecification)
-                .auth()
-                .oauth2(accessToken)
+                .when()
+                .get("v1/albums/{id}", id)
+                .then()
+                .spec(responseSpecification)
+                .extract()
+                .as(Error.class);
+    }
+
+    @Step("Send GET /albums/{id}?market={market}")
+    public static Album getValidAlbum(String id, String market) {
+        return given(requestSpecification)
                 .when()
                 .get("v1/albums/{id}?market={market}", id, market)
                 .then()
-                .spec(responseSpecStatusCodeIs200)
+                .spec(responseSpecification)
                 .extract()
                 .as(Album.class);
+    }
+
+    @Step("Send GET /albums/{id}?market={market}")
+    public static Error getInvalidAlbum(String id, String market) {
+        return given(requestSpecification)
+                .when()
+                .get("v1/albums/{id}?market={market}", id, market)
+                .then()
+                .spec(responseSpecification)
+                .extract()
+                .as(Error.class);
     }
 }
