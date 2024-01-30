@@ -1,11 +1,11 @@
-package com.spotify.ui.models;
+package com.spotify.ui.models.responses;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Artist {
+public class AlbumArtist {
     ExternalUrls external_urls;
     String href;
     String id;

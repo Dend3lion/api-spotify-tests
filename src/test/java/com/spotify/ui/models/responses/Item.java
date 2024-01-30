@@ -1,4 +1,4 @@
-package com.spotify.ui.models;
+package com.spotify.ui.models.responses;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
@@ -7,7 +7,7 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Item {
     String album_type;
-    Artist[] artists;
+    AlbumArtist[] albumArtists;
     String[] available_markets;
     ExternalUrls external_urls;
     String href;

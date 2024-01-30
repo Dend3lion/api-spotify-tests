@@ -1,0 +1,35 @@
+{
+  "external_urls": {
+    "spotify": "https://open.spotify.com/artist/57vWImR43h4CaDao012Ofp"
+  },
+  "followers": {
+    "href": null,
+    "total": 4181555
+  },
+  "genres": [
+    "afrofuturism"
+  ],
+  "href": "https://api.spotify.com/v1/artists/57vWImR43h4CaDao012Ofp?locale=ru-RU%2Cru%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7%2Cko%3Bq%3D0.6%2Chu%3Bq%3D0.5%2Cit%3Bq%3D0.4",
+  "id": "57vWImR43h4CaDao012Ofp",
+  "images": [
+    {
+      "url": "https://i.scdn.co/image/ab6761610000e5eb09ac9d040c168d4e4f58eb42",
+      "height": 640,
+      "width": 640
+    },
+    {
+      "url": "https://i.scdn.co/image/ab6761610000517409ac9d040c168d4e4f58eb42",
+      "height": 320,
+      "width": 320
+    },
+    {
+      "url": "https://i.scdn.co/image/ab6761610000f17809ac9d040c168d4e4f58eb42",
+      "height": 160,
+      "width": 160
+    }
+  ],
+  "name": "Steve Lacy",
+  "popularity": 80,
+  "type": "artist",
+  "uri": "spotify:artist:57vWImR43h4CaDao012Ofp"
+}

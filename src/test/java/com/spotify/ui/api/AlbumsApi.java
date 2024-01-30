@@ -1,7 +1,9 @@
 package com.spotify.ui.api;
 
-import com.spotify.ui.models.Album;
-import com.spotify.ui.models.Error;
+import com.spotify.ui.models.requests.AlbumTracksRequest;
+import com.spotify.ui.models.responses.Album;
+import com.spotify.ui.models.responses.AlbumTracks;
+import com.spotify.ui.models.responses.Error;
 import io.qameta.allure.Step;
 
 import static com.spotify.ui.specs.TestSpecs.requestSpecification;
@@ -13,7 +15,7 @@ public class AlbumsApi {
     public static Album getValidAlbum(String id) {
         return given(requestSpecification)
                 .when()
-                .get("v1/albums/{id}", id)
+                .get(Endpoints.ALBUMS, id)
                 .then()
                 .spec(responseSpecification)
                 .extract()
@@ -24,32 +26,25 @@ public class AlbumsApi {
     public static Error getInvalidAlbum(String id) {
         return given(requestSpecification)
                 .when()
-                .get("v1/albums/{id}", id)
+                .get(Endpoints.ALBUMS, id)
                 .then()
                 .spec(responseSpecification)
                 .extract()
                 .as(Error.class);
     }
 
-    @Step("Send GET /albums/{id}?market={market}")
-    public static Album getValidAlbum(String id, String market) {
+    @Step("Send GET /albums/{id}/tracks")
+    public static AlbumTracks getValidAlbumTracks(AlbumTracksRequest albumTracksRequest) {
         return given(requestSpecification)
                 .when()
-                .get("v1/albums/{id}?market={market}", id, market)
+                .get(Endpoints.ALBUM_TRACKS,
+                        albumTracksRequest.getId(),
+                        albumTracksRequest.getMarket(),
+                        albumTracksRequest.getLimit(),
+                        albumTracksRequest.getOffset())
                 .then()
                 .spec(responseSpecification)
                 .extract()
-                .as(Album.class);
-    }
-
-    @Step("Send GET /albums/{id}?market={market}")
-    public static Error getInvalidAlbum(String id, String market) {
-        return given(requestSpecification)
-                .when()
-                .get("v1/albums/{id}?market={market}", id, market)
-                .then()
-                .spec(responseSpecification)
-                .extract()
-                .as(Error.class);
+                .as(AlbumTracks.class);
     }
 }

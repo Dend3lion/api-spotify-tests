@@ -20,14 +20,6 @@ public class AuthorizationApi {
     public static String getAccessToken() {
         String encodedCredentials = encode(CLIENT_ID, CLIENT_SECRET);
 
-        return given()
-                .contentType("application/x-www-form-urlencoded")
-                .formParam("grant_type", "client_credentials")
-                .header("Authorization", "Basic " + encodedCredentials)
-                .when()
-                .post(apiConfig.getAuthUrl() + "/api/token")
-                .then()
-                .extract()
-                .path("access_token");
+        return given().contentType("application/x-www-form-urlencoded").formParam("grant_type", "client_credentials").header("Authorization", "Basic " + encodedCredentials).when().post(apiConfig.getAuthUrl() + "/api/token").then().extract().path("access_token");
     }
 }

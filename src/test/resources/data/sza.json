@@ -1,0 +1,37 @@
+{
+  "external_urls": {
+    "spotify": "https://open.spotify.com/artist/7tYKF4w9nC0nq9CsPZTHyP"
+  },
+  "followers": {
+    "href": null,
+    "total": 17214048
+  },
+  "genres": [
+    "pop",
+    "r&b",
+    "rap"
+  ],
+  "href": "https://api.spotify.com/v1/artists/7tYKF4w9nC0nq9CsPZTHyP?locale=ru-RU%2Cru%3Bq%3D0.9%2Cen-US%3Bq%3D0.8%2Cen%3Bq%3D0.7%2Cko%3Bq%3D0.6%2Chu%3Bq%3D0.5%2Cit%3Bq%3D0.4",
+  "id": "7tYKF4w9nC0nq9CsPZTHyP",
+  "images": [
+    {
+      "url": "https://i.scdn.co/image/ab6761610000e5eb0895066d172e1f51f520bc65",
+      "height": 640,
+      "width": 640
+    },
+    {
+      "url": "https://i.scdn.co/image/ab676161000051740895066d172e1f51f520bc65",
+      "height": 320,
+      "width": 320
+    },
+    {
+      "url": "https://i.scdn.co/image/ab6761610000f1780895066d172e1f51f520bc65",
+      "height": 160,
+      "width": 160
+    }
+  ],
+  "name": "SZA",
+  "popularity": 89,
+  "type": "artist",
+  "uri": "spotify:artist:7tYKF4w9nC0nq9CsPZTHyP"
+}
