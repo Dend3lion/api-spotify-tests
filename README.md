@@ -13,8 +13,6 @@
 - [Integration with Jira](#-integration-with-jira)
 - [Remote launch in Browserstack](#-remote-launch-in-browserstack)
 - [Notification of test results in Telegram](#-notification-of-test-results-in-telegram)
-- [Test video from Selenoid](#-test-video-from-selenoid)
-
 
 ## :computer: Technologies and tools
 <p align="center">
@@ -91,9 +89,4 @@ gradle clean test
 ## <img alt="Telegam" width="5%" src="media/images/Telegram.svg"/> Notification of test results in [Telegram](https://play.google.com/store/apps/details?id=org.telegram.messenger&hl=ru&gl=US)
 <p align="center">  
 <img src="media/images/Telegram_Bot.png" alt="Telegram bot" width="300"/></a>  
-</p>
-
-## <img alt="Selenoid" width="5%" src="media/images/Selenoid.svg"/> Test run in [Selenoid](https://aerokube.com/selenoid/)
-<p align="center">  
-<img src="media/gifs/Test_Video.gif" alt="Test Video" width="950"/></a>  
 </p>
