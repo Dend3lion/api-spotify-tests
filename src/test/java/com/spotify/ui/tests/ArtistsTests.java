@@ -31,7 +31,7 @@ public class ArtistsTests extends TestBase {
 
         step("Verify response artist", () -> {
             step("Valid name", () -> assertThat(artist.getName()).isEqualTo(expectedArtist.getName()));
-            step("Valid followers", () -> assertThat(artist.getFollowers()).isEqualTo(expectedArtist.getFollowers()));
+            step("Valid genres", () -> assertThat(artist.getGenres()).contains(expectedArtist.getGenres()[0]));
             step("Valid popularity", () -> assertThat(artist.getPopularity()).isEqualTo(expectedArtist.getPopularity()));
         });
     }
