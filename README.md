@@ -1,4 +1,4 @@
-# Test automation project for [Spotify](https://store.steampowered.com/) API
+# Test automation project for [Spotify](https://open.spotify.com) API
 
 <p align="center"><a href="https://open.spotify.com/"><img src="media/images/Spotify_Logo.png" align="center" height="150" alt="Steam"/></a></p>  
 
